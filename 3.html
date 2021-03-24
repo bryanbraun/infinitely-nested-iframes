@@ -25,9 +25,10 @@
   <script>
     const iframeEl = document.querySelector('iframe');
     const currentPage = location.pathname.split("/").pop(); // 3.html
-    const nextQueryValue = location.search ? Number(location.search.split("?").pop()) + 1 : 1;
+    const nextQueryValue = !location.search ? 1 :
+      Number(location.search.split("?").pop()) + 1;
 
-    iframeEl.src = `3.html?${nextQueryValue}`
+    iframeEl.src = `3.html?${nextQueryValue}`;
   </script>
 </body>
 </html>
